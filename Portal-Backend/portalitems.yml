@@ -1,0 +1,19 @@
+version: '3.7'
+
+networks:
+    default:
+         name: YOURNETWORK
+         external: true
+
+services:
+    PortalItems:
+        container_name: PortalItems
+        stdin_open: true
+        tty: true
+        image: portalitems:latest
+        hostname: PortalItems
+        volumes:
+            - PATH_TO_HEIMDALL_DATA/www/app.sqlite:/app.sqlite
+        networks: 
+            - default
+        restart: always

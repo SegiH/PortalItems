@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+     <ion-toolbar>
+          <ion-buttons slot="start"> 
+               <ion-menu-button></ion-menu-button>                
+          </ion-buttons>
+      
+          <ion-title>Portal</ion-title>
+     </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+     <ion-refresher slot="fixed" (ionRefresh)="getItems($event)">
+          <ion-refresher-content></ion-refresher-content>
+     </ion-refresher>
+
+     <ion-list>
+          <ion-item *ngFor="let item of items">
+               <ion-label><a [href]="item[1]" target="_blank">{{item[0]}}</a></ion-label>
+          </ion-item> 
+     </ion-list>
+</ion-content>

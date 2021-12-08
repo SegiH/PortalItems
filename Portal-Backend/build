@@ -1,0 +1,7 @@
+#!/bin/bash
+
+docker build docker/ -t portalitems:latest
+
+docker-compose -f portalitems.yml up -d
+
+docker logs PortalItems
